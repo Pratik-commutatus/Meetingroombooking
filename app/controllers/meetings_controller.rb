@@ -51,7 +51,7 @@ class MeetingsController < ApplicationController
           :enable_starttls_auto => true
         }
 
-        MeetingMailer.with(meeting: @meeting, users: @meeting.users.map {|x| x} ).new_meeting_email.deliver_now
+        MeetingMailer.with(meeting: @meeting, users: @meeting.users.map {|x| x} ).new_meeting_email.deliver_now!
       else
         format.html { render :new }
         format.json { render json: @meeting.errors, status: :unprocessable_entity }
