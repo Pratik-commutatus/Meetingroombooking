@@ -1,0 +1,57 @@
+-@users=User.all
+
+= form_for @meeting do |f|
+
+  - if @meeting.errors.any?
+    #error_explanation class="alert alert-danger"
+      h2 = "#{pluralize(@meeting.errors.count, "error")} prohibited this meeting from being saved:"
+      ul
+        - @meeting.errors.full_messages.each do |message|
+          li = message
+
+  .field class="date"
+    = f.label :date
+    br
+    = f.date_select :date
+    br
+    br   
+  .field
+    = f.label :Start_time
+    br
+    = f.time_select :time, {:minute_step => 15, :ampm => true, start_hour:7, end_hour:20}
+    br
+    br 
+  .field
+    = f.label :End_time
+    br
+    = f.time_select :endtime, {:minute_step => 15, :ampm => true, start_hour:7, end_hour:20}  
+    br
+    br
+  .field
+    = f.label :Meeting_name
+    br
+    = f.text_field :name, class:"form-control", style:"width:200px;"
+    br
+    
+  .field
+    = f.label :meeting_room
+    br
+    = f.collection_select :meetingroom_id, Meetingroom.order(:roomname),:id,:roomname 
+    br
+    br 
+    
+    / =fields_for @users do |a|
+    /  .field
+    /  =f.label :choose
+    /  =check_box("meeting", "colleagues", {:multiple => true}, a.email, nil)
+
+  .field
+    = f.label :invite
+    br
+    = f.select(:user_ids, User.where.not(email: current_user.email).map {|user| [user.email, user.id]}, {}, id: "event_user_ids", :multiple => true, :class => 'form-control js-selectable')
+    
+  br
+  br
+    
+  .actions = f.submit class:"btn btn-primary btn-sm"
+  br

@@ -1,0 +1,113 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ *{
+    font-family: 'Lato', sans-serif !important;
+   
+    
+ }
+ h1{
+    font-family: 'Oxanium', cursive !important;
+ }
+ h2{
+     margin-top: 5px !important;
+ }
+ .table{
+     width: 80%;
+ }
+
+ .container{
+     margin: 10px;
+ }
+ .navbar-nav { 
+    flex-direction: row;
+}
+.adjust{
+    display: flex;
+   
+    justify-content: center;
+    
+}
+.status{
+    color: rgb(129, 125, 125);
+    text-align: center;
+}
+.styleit{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid white; */
+    width: 430px;
+    align-items: center;
+}
+a{ text-decoration: none !important;
+color: white;
+}
+.navbar{
+    margin-bottom: 0px !important;
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.img1{
+background-size:cover !important ;
+width: 900px ;
+margin-left:90px;
+border-radius: 20px;
+}
+.btn{
+    font-size: 20px !important;
+    font-weight: 600 !important;
+}
+
+.newtext{
+    font-size: 25px;
+}
+.backtext{
+    font-size: 19px;
+}
+.card{
+    display: flex;
+    margin: 140px auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 20px;
+    background-image: linear-gradient(rgb(236, 235, 235), rgba(241, 240, 240, 0.418));
+    box-shadow: 6px 6px 12px grey;
+    
+}
+.fp{
+    color: black !important;
+}
+.cardform{
+    display: flex;
+    flex-direction: column;
+    margin: 140px auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 20px;
+    background-image: linear-gradient(rgb(236, 235, 235), rgba(193, 248, 255, 0.418));
+    box-shadow: 6px 6px 12px grey;
+  
+    
+}
+.meeting{
+    margin-top: 40px;
+}
+.container{
+    margin-top: 80px;
+}

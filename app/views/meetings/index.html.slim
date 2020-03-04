@@ -1,0 +1,113 @@
+nav
+  #nav-tab.nav.nav-tabs.nav-fill role="tablist" 
+    a#nav-home-tab.nav-item.nav-link.active aria-controls="nav-home" aria-selected="true" data-toggle="tab" href="#nav-home" role="tab"  Today
+    a#nav-profile-tab.nav-item.nav-link aria-controls="nav-profile" aria-selected="false" data-toggle="tab" href="#nav-profile" role="tab"  Upcoming
+    a#nav-contact-tab.nav-item.nav-link aria-controls="nav-contact" aria-selected="false" data-toggle="tab" href="#nav-contact" role="tab"  Attended
+#nav-tabContent.tab-content
+  #nav-home.tab-pane.fade.show.active.in aria-labelledby="nav-home-tab" role="tabpanel"
+   br
+    h1 Today's Meetings:
+    br
+    table class="table table-hover"
+      thead
+        tr
+          th Date
+          th Meeting
+          th Start Time
+          th End Time
+          th Meeting room
+          th
+          th
+          th
+
+      tbody
+        - @meetingstoday.each do |meeting|
+          tr
+            td = meeting.date
+            td = meeting.name
+            td = readable_time(meeting.time)
+            td = readable_time(meeting.endtime)
+            / td = meeting.user.email
+            td = meeting.meetingroom.roomname
+            td = link_to 'Show', meeting
+            td
+            / td = link_to 'Edit', edit_meeting_path(meeting)
+            td = link_to 'Destroy', meeting, data: { confirm: 'Are you sure?' }, method: :delete
+
+    br
+
+    = link_to 'New Meeting', new_meeting_path, class:"newtext"
+    br
+    br
+    / = link_to 'Back', root_path, class:"backtext"
+  #nav-profile.tab-pane.fade aria-labelledby="nav-profile-tab" role="tabpanel" 
+    br
+    h1 Your Upcoming Meetings:
+    br
+    table class="table table-hover"
+      thead
+        tr
+          th Date
+          th Meeting
+          th Start Time
+          th End Time
+          th Meeting room
+          th
+          th
+          th
+
+      tbody
+        - @meetingsupcoming.each do |meeting|
+          tr
+            td = meeting.date
+            td = meeting.name
+            td = readable_time(meeting.time)
+            td = readable_time(meeting.endtime)
+            / td = meeting.user.email
+            td = meeting.meetingroom.roomname
+            td = link_to 'Show', meeting
+            td
+            / td = link_to 'Edit', edit_meeting_path(meeting)
+            td = link_to 'Destroy', meeting, data: { confirm: 'Are you sure?' }, method: :delete
+
+    br
+
+    = link_to 'New Meeting', new_meeting_path, class:"newtext"
+    br
+    br
+  #nav-contact.tab-pane.fade aria-labelledby="nav-contact-tab" role="tabpanel" 
+    br
+    h1 Meetings Attended:
+    br
+    table class="table table-hover"
+      thead
+        tr
+          th Date
+          th Meeting
+          th Start Time
+          th End Time
+          th Meeting room
+          th
+          th
+          th
+
+      tbody
+        - @meetingsattended.each do |meeting|
+          tr
+            td = meeting.date
+            td = meeting.name
+            td = readable_time(meeting.time)
+            td = readable_time(meeting.endtime)
+            / td = meeting.user.email
+            td = meeting.meetingroom.roomname
+            td = link_to 'Show', meeting
+            td
+            / td = link_to 'Edit', edit_meeting_path(meeting)
+            td = link_to 'Destroy', meeting, data: { confirm: 'Are you sure?' }, method: :delete
+
+    br
+
+    = link_to 'New Meeting', new_meeting_path, class:"newtext"
+    br
+    br
+  

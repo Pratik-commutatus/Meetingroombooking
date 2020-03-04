@@ -1,0 +1,29 @@
+
+-if current_user && current_user.admin
+ =link_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-outline-danger"
+ br
+ br
+ h4 =link_to "Create Meeting Room", meetingrooms_path
+ br
+
+-elsif current_user && current_user.admin == false
+ =link_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-outline-danger"
+ br
+ br
+ h4 =link_to "Scheduled Meetings", meetings_path
+ br
+-else
+
+ img src="https://cdn.dribbble.com/users/2029822/screenshots/5409049/illus_team_meeting_floating_digital_product_mockup.png" class="img1"
+ br
+ br
+ div class="adjust"
+    =link_to "Sign up", new_user_registration_path, class:"btn btn-outline-warning"
+    br
+    br
+    =link_to "Log in", new_user_session_path,  class:"btn btn-outline-primary"
+    br
+
+
+
+ 

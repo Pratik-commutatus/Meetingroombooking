@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-02-29
+  time: 2020-02-29 18:59:05
+  user: one
+  meetingroom: one
+
+two:
+  date: 2020-02-29
+  time: 2020-02-29 18:59:05
+  user: two
+  meetingroom: two

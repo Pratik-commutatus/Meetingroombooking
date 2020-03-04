@@ -1,0 +1,19 @@
+
+    = form_for @meetingroom do |f|
+      - if @meetingroom.errors.any?
+        #error_explanation class="alert alert-danger"
+        div class="alert alert-danger"
+          h2 = "#{pluralize(@meetingroom.errors.count, "error")} prohibited this meetingroom from being saved:"
+          ul
+            - @meetingroom.errors.full_messages.each do |message|
+              li = message
+
+      .field
+        = f.label :roomname
+        = f.text_field :roomname, class:"form-control"
+      .field
+        = f.label :capacity
+        = f.number_field :capacity, class:"form-control"
+        br
+      .actions = f.submit class:"btn btn-primary btn-sm"
+    

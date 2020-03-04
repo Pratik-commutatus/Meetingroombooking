@@ -1,0 +1,11 @@
+div class="cardform"
+  p
+    strong Roomname:     
+    = @meetingroom.roomname
+  p
+    strong Capacity:       
+    = @meetingroom.capacity
+
+  => link_to 'Edit', edit_meetingroom_path(@meetingroom)
+  '
+  =< link_to 'Back', meetingrooms_path
