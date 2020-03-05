@@ -84,7 +84,7 @@ nav
                   th
                   th
 
-              tbody
+              tbody class="green"
                 - @meetingstoday.each do |meeting|
                   tr
                     td = meeting.date
@@ -120,7 +120,7 @@ nav
                   th
                   th
 
-              tbody
+              tbody class="blue"
                 - @meetingsupcoming.each do |meeting|
                   tr
                     td = meeting.date
@@ -143,7 +143,7 @@ nav
             br
             h2 Meetings Attended:
             br
-            table class="table table-hover"
+            table class="table table-hover" 
               thead
                 tr
                   th Date
@@ -155,7 +155,7 @@ nav
                   th
                   th
 
-              tbody
+              tbody class="red"
                 - @meetingsattended.each do |meeting|
                   tr
                     td = meeting.date

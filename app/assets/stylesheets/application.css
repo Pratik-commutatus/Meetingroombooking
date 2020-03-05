@@ -112,3 +112,15 @@ height: 650px;
 .container{
     margin-top: 80px;
 }
+
+.red{
+ background-color: rgb(248, 241, 241);
+}
+
+.green{
+background-color: rgb(222, 247, 222);
+}
+
+.blue{
+background-color: rgb(224, 224, 231);
+}
