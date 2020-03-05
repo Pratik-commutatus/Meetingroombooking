@@ -1,16 +1,19 @@
 
 div class="cardform"
   p
-    strong Date:
+    strong Date:  
     = @meeting.date
   p
-    strong Time:
-    = @meeting.time
+    strong Start time:  
+    = readable_time(@meeting.time)
+  p
+    strong Start time:  
+    = readable_time(@meeting.endtime)
 
   p
-    strong Meetingroom:
+    strong Meetingroom:  
     = @meeting.meetingroom.roomname
 
-  => link_to 'Edit', edit_meeting_path(@meeting)
+  / => link_to 'Edit', edit_meeting_path(@meeting)
   '
   =< link_to 'Back', meetings_path
