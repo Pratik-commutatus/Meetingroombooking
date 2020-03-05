@@ -16,7 +16,7 @@ class Meeting < ApplicationRecord
     cap = k.join.to_i
     userscount = user_ids.count + 1
     if ( userscount > cap )
-      errors.add("Meeting Room Capacity Reached")
+      errors.add(:user_ids, "Meeting Room Capacity Reached(#{cap})")
     end
   end
 
