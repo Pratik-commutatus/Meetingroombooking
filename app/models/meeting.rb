@@ -21,12 +21,16 @@ class Meeting < ApplicationRecord
   end
 
   def check_slot
-    c=Meeting.all.where("meetingroom_id= ? AND date= ? AND time<= ? AND endtime>= ?", meetingroom_id, date, time, endtime ).count
-    if(c==0)
+    roomdatefind=Meeting.all.where("meetingroom_id= ? AND date= ?", meetingroom_id, date)
+    c=roomdatefind.where("time<= ? AND endtime>= ?", time, endtime ).count
+    d=roomdatefind.where("time>= ? AND endtime>= ?", time, endtime ).count
+    e=roomdatefind.where("time<= ? AND endtime<= ?", time, endtime ).count
+    f=roomdatefind.where("time>= ? AND endtime<= ?", time, endtime ).count
+    g=roomdatefind.where("endtime>= ? AND time<= ?", time, endtime ).count
+    if(c==0 && d==0 && e==0 && f==0 && g==0)
       
     else
       errors.add(:time, "Slot Booked")
-
     end
   end
 
